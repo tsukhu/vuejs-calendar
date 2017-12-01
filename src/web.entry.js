@@ -1,8 +1,9 @@
-import Vue from 'vue'
+import './style.scss';
 
-new Vue({
-  el: '#app',
-  data: {
-    msg: 'Hello World'
-  }
-});
+
+import VueApp from './entry';
+
+import moment from "moment-timezone";
+moment.tz.setDefault("UTC");
+
+VueApp().$mount('#app');
