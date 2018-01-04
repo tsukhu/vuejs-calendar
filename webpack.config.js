@@ -18,7 +18,7 @@ var baseConfig = {
           loader: 'babel-loader',
           options: {
             "presets": [ [ "es2015" ] ],
-            "plugins": [ "transform-es2015-destructuring", "transform-runtime" ]
+            "plugins": [ "transform-es2015-modules-commonjs", "dynamic-import-node", "transform-es2015-destructuring", "transform-runtime" ]
           }
         }],
         exclude: /node_modules/
