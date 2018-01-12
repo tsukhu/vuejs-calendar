@@ -21,7 +21,7 @@ var baseConfig = {
               "targets": {
                 "browsers": ["ie >= 11"]
               },
-              "debug": true,
+              "debug": false,
             }]
             ,[ "es2015" ] ],
             "plugins": [ "transform-es2015-destructuring", "transform-runtime" ]

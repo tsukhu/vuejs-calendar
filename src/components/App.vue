@@ -1,5 +1,11 @@
 <template>
 <div>
+    <div id="header">
+      <div>
+        <h1>Vue.js Calender</h1>
+      </div>
+        <current-month></current-month>
+      </div>
     <div id="day-bar">
         <div>Mon</div>
         <div>Tue</div>
@@ -14,18 +20,21 @@
             <calender-day v-for="day in week" :day="day"></calender-day>
         </div>
     </div>
+    <event-form></event-form>
 </div>
 </template>
 <script>
 import CalenderDay from './CalenderDay.vue';
+import CurrentMonth from './CurrentMonth.vue';
+import EventForm from './EventForm.vue';
 export default {
-  data() {
-    return {
-      month: 1,
-      year: 2018
-    };
-  },
   computed: {
+    month() {
+      return this.$store.state.currentMonth;
+    },
+    year() {
+      return this.$store.state.currentYear;
+    },
     days() {
       // Generating all days in current month
       let days = [];
@@ -76,7 +85,9 @@ export default {
     }
   },
   components: {
-    CalenderDay
+    CalenderDay,
+    CurrentMonth,
+    EventForm
   }
 };
 </script>
